@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{55AF6243-A418-4819-A0EA-859557614008}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="KBDownload\KBDownload.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LicenceFileViewer\LicenceFileViewer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="KBDownload">
+        <MSBuild Projects="KBDownload\KBDownload.dproj"/>
+    </Target>
+    <Target Name="KBDownload:Clean">
+        <MSBuild Projects="KBDownload\KBDownload.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KBDownload:Make">
+        <MSBuild Projects="KBDownload\KBDownload.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LicenceFileViewer">
+        <MSBuild Projects="LicenceFileViewer\LicenceFileViewer.dproj"/>
+    </Target>
+    <Target Name="LicenceFileViewer:Clean">
+        <MSBuild Projects="LicenceFileViewer\LicenceFileViewer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LicenceFileViewer:Make">
+        <MSBuild Projects="LicenceFileViewer\LicenceFileViewer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="KBDownload;LicenceFileViewer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="KBDownload:Clean;LicenceFileViewer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="KBDownload:Make;LicenceFileViewer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

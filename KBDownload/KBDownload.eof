@@ -1,0 +1,29 @@
+﻿
+
+[Exception Log]
+EurekaLog Version=8000
+_CustomProfile=""
+Activate=1
+atFixSafeCallException=1
+atVCL=1
+atWin32=1
+DeleteMapAfterCompile=0
+dpJCL=1
+Encrypt Password=""
+idEurekaLog=1
+idEurekaLogDetailed=1
+idMSClassic=1
+idStepsToReproduce=1
+InjectCode=1
+InjectInfo=1
+InjectOptions=1
+loCatchLeaks=0
+loCatchLeaksExceptions=0
+loWipeStackOnIdle=0
+Output Path="%%AppData%%\\BastardSoftware\\Bug Reports\\%%_ThisModuleName%%\\"
+ProjectID="{CFE57E71-3464-4234-87FF-7558B5C9EC0B}"
+Sender Classes="TELMailShellSender"
+sndShellRecepient="Development-ToolsTeam@logrhythm.com"
+soCustomData=0
+soStepsToReproduce=0
+
